@@ -25,10 +25,10 @@ const router=createBrowserRouter(
 )
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <StrictMode>
     <FilterProvider>
       <RouterProvider router={router}/>
     </FilterProvider>
       
-  // </StrictMode>,
+  </StrictMode>,
 )

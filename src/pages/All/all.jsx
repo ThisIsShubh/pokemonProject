@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
-import { FilterContext } from '../../Context/FilterContext'; // ⬅️ Your global context
+import { FilterContext } from '../../Context/FilterContext';
 import bgImage from '/src/assets/background-darkbg.png';
 import bgImage2 from '/src/assets/background-lightbg.png';
 import './all.css'

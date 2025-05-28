@@ -6,14 +6,14 @@ import './type.css';
 const limit = 30;
 
 function Typeview() {
-  const { typeName } = useParams(); // Get type from URL
+  const { typeName } = useParams(); 
   const [allPokemonList, setAllPokemonList] = useState([]);
   const [visiblePokemon, setVisiblePokemon] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  // Scroll and paginate
+ 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const start = (page - 1) * limit;
@@ -21,7 +21,7 @@ function Typeview() {
     setVisiblePokemon(allPokemonList.slice(start, end));
   }, [page, allPokemonList]);
 
-  // Fetch Pokémon by type on mount
+  
   useEffect(() => {
     const fetchTypePokemon = async () => {
       setLoading(true);

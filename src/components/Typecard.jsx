@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './regionalCard.css';
 import bgImage1 from '/src/assets/background-darkbg.png';
 
-// Type color themes (you can customize these)
+
 const typeColors = {
   fire: ['#F08030', '#F5AC78'],
   water: ['#6890F0', '#9DB7F5'],

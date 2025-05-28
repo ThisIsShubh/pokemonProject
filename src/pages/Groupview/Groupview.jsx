@@ -88,7 +88,7 @@ const name = group?.label ?? 'Unknown Group';
             })
           );
 
-          // Flatten the nested arrays and filter out empty ones
+          
           speciesList = megaForms.flat().filter(Boolean);
         } else if (groupName === 'ultrabeasts') {
   try {
@@ -118,7 +118,7 @@ const name = group?.label ?? 'Unknown Group';
             let name = '';
 
             if (typeof entry === 'string') {
-              // Regular species like starters, legendaries, etc.
+              
               const speciesRes = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${entry}`);
               const speciesData = await speciesRes.json();
               const defaultVariety = speciesData.varieties.find(v => v.is_default);
@@ -127,7 +127,7 @@ const name = group?.label ?? 'Unknown Group';
               pokemonUrl = defaultVariety.pokemon.url;
               name = defaultVariety.pokemon.name;
             } else {
-              // Mega form entry: already has `url` and `name`
+             
               pokemonUrl = entry.url;
               name = entry.name;
             }

@@ -40,30 +40,30 @@ function Regionview() {
     const fetchRegionPokemon = async () => {
       setLoading(true);
       try {
-        // Fetch region data
+        
         const regionRes = await fetch(`https://pokeapi.co/api/v2/region/${regionName}`);
         if (!regionRes.ok) throw new Error(`Region ${regionName} not found`);
         const regionData = await regionRes.json();
 
-        // Fetch pokedex data
+        
         const pokedexUrl = regionData.pokedexes[0].url;
         const pokedexRes = await fetch(pokedexUrl);
         if (!pokedexRes.ok) throw new Error(`Pokedex not found for region ${regionName}`);
         const pokedexData = await pokedexRes.json();
 
-        // Process main list
+        
         const speciesList = pokedexData.pokemon_entries.map(entry => entry.pokemon_species.name);
         const existingPokemon = await Promise.all(speciesList.map(fetchPokemonData));
         let finalList = existingPokemon.filter(Boolean);
 
-        // Add legendaries
+        
         const regionKey = regionName.toLowerCase();
         if (LEGENDARY_ADDITIONS[regionKey]) {
           const legendaries = await Promise.all(
             LEGENDARY_ADDITIONS[regionKey].map(fetchPokemonData)
           );
           
-          // Filter out duplicates
+          
           const existingIds = new Set(finalList.map(p => p.id));
           const newLegendaries = legendaries.filter(p => p && !existingIds.has(p.id));
           
@@ -105,7 +105,6 @@ function Regionview() {
     fetchRegionPokemon();
   }, [regionName]);
 
-  // Update visible Pokémon when page or list changes
   useEffect(() => {
     const start = (page - 1) * limit;
     const end = start + limit;

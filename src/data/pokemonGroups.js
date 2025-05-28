@@ -1,4 +1,4 @@
-//spokemonGroups.js
+
 import startersImg from '../assets/starters.png';
 import legendsImg from '../assets/legendary.png';
 import mythicalsImg from '../assets/mythical.png';

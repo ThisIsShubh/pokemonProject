@@ -57,26 +57,26 @@ function PokeDetails() {
   };
 
 
-  // Modify the useEffect hook to properly handle species/forms relationship
+  
   useEffect(() => {
     const fetchAllData = async () => {
       try {
         setLoading(true);
 
-        // First fetch Pokémon data with original name (including forms)
+        
         const pokemonRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
         if (!pokemonRes.ok) throw new Error("Failed to fetch Pokémon data");
         const pokemonData = await pokemonRes.json();
 
-        // Get species URL from Pokémon data (this works for all forms)
+        
         const speciesUrl = pokemonData.species.url;
 
-        // Fetch species data using the correct URL
+        
         const speciesRes = await fetch(speciesUrl);
         if (!speciesRes.ok) throw new Error("Failed to fetch species data");
         const speciesData = await speciesRes.json();
 
-        // Fetch additional data using original Pokémon data
+        
         const [evolutionData, movesData, abilitiesData, typeData] = await Promise.all([
           speciesData.evolution_chain?.url ? fetch(speciesData.evolution_chain.url).then(res => res.json()) : Promise.resolve(null),
           Promise.all(pokemonData.moves.map(m => fetch(m.move.url).then(res => res.json()))),
@@ -104,7 +104,7 @@ function PokeDetails() {
   const renderEvolutionChain = (chain) => {
     if (!chain) return null;
 
-    // Check if current Pokémon is a mega evolution
+   
     const isMega = pokemon.name.includes('-mega');
 
     return (
@@ -166,7 +166,7 @@ function PokeDetails() {
     const forms = getAllForms();
     if (forms.length === 0) return null;
 
-    // Categorize forms
+    
     const formCategories = {
       mega: [],
       regional: [],
@@ -245,7 +245,7 @@ function PokeDetails() {
     );
   };
 
-  // Helper component
+  
   const FormCategory = ({ title, forms, formatter }) => (
     <div className="form-category">
       <h3>{title}</h3>
@@ -332,7 +332,7 @@ function PokeDetails() {
   const calculateTypeEffectiveness = () => {
     const attackTypes = new Set();
 
-    // Collect all possible attack types
+    
     typeData.forEach(type => {
       Object.values(type.damage_relations).flat().forEach(entry => {
         attackTypes.add(entry.name);
@@ -341,7 +341,7 @@ function PokeDetails() {
 
     const multipliers = {};
 
-    // For each attack type (e.g., fire, water, grass...), calculate the total multiplier
+    
     attackTypes.forEach(attackType => {
       let multiplier = 1;
 

@@ -76,12 +76,12 @@
     padding: 0.5rem;
 }
 
-/* Hover Effects */
+
 .rcard:hover .rcard-img-container {
     transform:translateY(-5px);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .rcard {
         min-height: 180px;

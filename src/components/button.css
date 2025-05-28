@@ -9,31 +9,30 @@
   color: white;
 }
 
-/* Primary = Red */
 .btn.primary {
-  background-color: #BE2B24; /* bright red */
+  background-color: #BE2B24;
 }
 
 .btn.primary:hover {
-  background-color: #9e2822; /* dark red */
+  background-color: #9e2822;
 }
 
-/* Secondary = Black */
+
 .btn.secondary {
-  background-color: #212121; /* dark grey/black */
+  background-color: #212121;
 }
 
 .btn.secondary:hover {
-  background-color: #000000; /* pure black */
+  background-color: #000000;
 }
 
-/* Danger = Red variant (slightly different shade) */
+
 .btn.danger {
-  background-color: #d32f2f; /* medium red */
+  background-color: #d32f2f; 
 }
 
 .btn.danger:hover {
-  background-color: #9a0007; /* dark wine red */
+  background-color: #9a0007;
 }
 
 .btn:disabled {

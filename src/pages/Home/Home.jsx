@@ -93,10 +93,10 @@ function Home() {
             <div className="regional-cards-container">
                 {pokemonGroups.map(({ key, label, image, gradient }) => (
                     <GroupCard
-                        key={key}       // Pass the group key for gradient selection
-                        title={label}         // Display label on card
+                        key={key}       
+                        title={label}         
                         image={image}
-                        gradient={gradient}        // Pokémon group image
+                        gradient={gradient}        
                         onClick={() => handleGroupClick(key)}
                     />
                 ))}
