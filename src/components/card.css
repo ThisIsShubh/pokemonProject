@@ -1,0 +1,184 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    height: 140px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+}
+
+.card-img-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: fit-content;
+}
+
+.info h1{
+    text-align: left;
+    width: 100%;
+}
+
+.bg{
+    position: absolute;
+    height: 160px;
+    width: auto;
+    right: 0;
+    bottom: 0;
+}
+
+.card-img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 12px 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.card-types {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.type-badge {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: #fff;
+    text-transform: capitalize;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-id {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Updated type colors for better contrast */
+.type-fire {
+    background-color: #EE8130;
+}
+
+.type-water {
+    background-color: #6390F0;
+}
+
+.type-grass {
+    background-color: #7AC74C;
+}
+
+.type-electric {
+    background-color: #F7D02C;
+}
+
+.type-bug {
+    background-color: #A6B91A;
+}
+
+.type-normal {
+    background-color: #A8A77A;
+}
+
+.type-poison {
+    background-color: #A33EA1;
+}
+
+.type-ground {
+    background-color: #E2BF65;
+}
+
+.type-fairy {
+    background-color: #D685AD;
+}
+
+.type-fighting {
+    background-color: #C22E28;
+}
+
+.type-psychic {
+    background-color: #F95587;
+}
+
+.type-rock {
+    background-color: #B6A136;
+}
+
+.type-ghost {
+    background-color: #735797;
+}
+
+.type-ice {
+    background-color: #96D9D6;
+}
+
+.type-dragon {
+    background-color: #6F35FC;
+}
+
+.type-dark {
+    background-color: #705746;
+}
+
+.type-steel {
+    background-color: #B7B7CE;
+}
+
+.type-flying {
+    background-color: #A98FF3;
+}
+
+.type-default {
+    background-color: #777;
+}

@@ -1,0 +1,48 @@
+.navbar{
+    background: linear-gradient(45deg, rgb(127, 0, 0), rgb(211, 0, 0), rgb(127, 0, 0));
+    display: flex;
+    padding: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: fixed;
+    height: 12vh;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.logoimg {
+  position: relative;
+  max-height: 40px;
+  width: auto;
+}
+
+.searchbar {
+  flex: 1;
+  width: 50%;
+  height: 50%;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 1rem;
+}
+
+.searchfilter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+.filter-button{
+    all:unset;
+    background-color: none;
+    color: white;
+}

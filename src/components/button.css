@@ -1,0 +1,43 @@
+.btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 99999px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+
+/* Primary = Red */
+.btn.primary {
+  background-color: #BE2B24; /* bright red */
+}
+
+.btn.primary:hover {
+  background-color: #9e2822; /* dark red */
+}
+
+/* Secondary = Black */
+.btn.secondary {
+  background-color: #212121; /* dark grey/black */
+}
+
+.btn.secondary:hover {
+  background-color: #000000; /* pure black */
+}
+
+/* Danger = Red variant (slightly different shade) */
+.btn.danger {
+  background-color: #d32f2f; /* medium red */
+}
+
+.btn.danger:hover {
+  background-color: #9a0007; /* dark wine red */
+}
+
+.btn:disabled {
+  background-color: #666666;
+  color: #cccccc;
+  cursor: not-allowed;
+}

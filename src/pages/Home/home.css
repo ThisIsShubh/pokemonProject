@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+.ghome-container {
+  position: relative;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  padding-top: 18vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.circle{
+  position: absolute;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 100%;
+  background-color: rgb(184, 227, 253);
+  right: -20vh;
+  top: 40vh;
+  z-index: 0;
+  filter: blur(120px);
+}
+
+.circle2{
+  position: absolute;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 100%;
+  background-color: rgb(254, 253, 188);
+  left: -20vh;
+  top: 0;
+  z-index: 0;
+  filter: blur(150px);
+}
+
+.hero-home{
+  position: relative;
+  height: 80vh;
+padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  border: #6b070755;
+}
+.content-home{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.content-home p{
+  font-family: 'Cedarville Cursive', sans-serif;
+  font-size: 1rem;
+}
+
+.content-home h1{
+  color: brown;
+}
+
+.ball{
+  position: absolute;
+  z-index: 1;
+  height: 80vh;
+  right: -80px;
+  width: auto;
+  overflow: hidden;
+  top: -60px;
+}
+
+.img-home{
+  height: 70vh;
+  width: auto;
+  z-index: 3;
+}
+
+.tit1{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.line{
+  flex-grow: 1;
+  height: 2px;
+  background-color: #6b070755;
+}
+
+.rgp{
+  color: brown;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.regional-cards-container{
+  display: flex;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 480px) {
+.regional-cards-container{
+  gap:1rem;
+}
+}

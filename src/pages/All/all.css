@@ -1,0 +1,234 @@
+.home-container {
+  box-sizing: border-box;
+  padding: 0;
+  padding-top: 24vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 36px;
+  min-height: 100vh;
+}
+
+
+.Cards {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 36px;
+}
+
+
+.Image2 {
+  height: 360px;
+  width: auto;
+  position: fixed;
+  left: -180px;
+  opacity: 1;
+  opacity: 0.6;
+  top: -100px;
+}
+
+
+.Image3 {
+  height: 360px;
+  width: auto;
+  position: fixed;
+  right: -180px;
+  opacity: 0.6;
+  top: -100px;
+}
+
+
+.logoimg {
+  position: relative;
+  height: 60px;
+  width: auto;
+}
+
+
+.logoimgcontainer {
+  padding: 36px;
+  padding-top: 10px;
+  position: relative;
+  background-color: rgb(196, 0, 0);
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+
+.logoimgcontainer h1 {
+  font-weight: 700;
+  font-size: x-large;
+}
+
+
+.bgImage {
+  position: absolute;
+  height: 200px;
+  width: auto;
+  top: -36px;
+  right: -48px;
+}
+
+
+.searchbar {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 80%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.filters {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 16px;
+  width: 80%;
+  z-index: 1;
+  padding-top: 16px;
+}
+
+
+.filters select,
+.filters label {
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(130, 18, 18);
+  color: #ededed;
+}
+
+
+
+
+
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+
+
+
+.spacer {
+  height: 10vh;
+  background-color: white;
+}
+
+
+
+
+
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 36px 0px;
+  gap: 8px;
+}
+
+
+.pagination button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+
+.pagination button:hover:not(:disabled) {
+  background-color: #eee;
+}
+
+
+.pagination button.active {
+  background-color: #282FE6;
+  color: white;
+}
+
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 480px) {
+
+
+  .logoimgcontainer {
+    width: 80%;
+    height: fit-content;
+  }
+
+
+  .Image2 {
+    display: none;
+    overflow: hidden;
+  }
+
+
+  .Image3 {
+    display: none;
+    overflow: hidden;
+  }
+
+
+  .logoimgcontainer h1 {
+  font-weight: 500;
+  font-size: large;
+  }
+
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+
+  .filters select,
+.filters label {
+  width: 100%;
+}
+
+
+.filters input{
+  width: fit-content;
+ 
+}
+
+
+  .logoimg {
+    position: relative;
+    height: 40px;
+    width: auto;
+  }
+}
