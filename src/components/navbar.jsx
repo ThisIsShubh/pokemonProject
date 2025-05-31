@@ -16,7 +16,7 @@ const Navbar = ({ onSearch }) => {  const {
   return (
     <nav className="navbar">
       <img
-        src="/src/assets/International_Pokémon_logo.svg.png"
+        src="/src/assets/International_Pokémon_logo.png"
         alt="Logo"
         className="logoimg"
       />
