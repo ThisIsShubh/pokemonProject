@@ -1,11 +1,13 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from '../../components/Card';
 import './region.css';
 import regionDetails from '../../data/regionabout';
+import { FilterContext } from '../../Context/FilterContext';
 
 const limit = 30;
+
 
 const LEGENDARY_ADDITIONS = {
   kanto: ['mewtwo', 'mew'],
@@ -26,8 +28,8 @@ function Regionview() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
+  const { searchTerm } = useContext(FilterContext);
 
-  
   
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -104,6 +106,21 @@ function Regionview() {
 
     fetchRegionPokemon();
   }, [regionName]);
+
+  useEffect(() => {
+  const filtered = allPokemonList.filter(p =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  const sliced = filtered.slice(start, end);
+
+  setVisiblePokemon(sliced);
+  setTotalPages(Math.ceil(filtered.length / limit));
+}, [searchTerm, allPokemonList, page]);
+
 
   useEffect(() => {
     const start = (page - 1) * limit;

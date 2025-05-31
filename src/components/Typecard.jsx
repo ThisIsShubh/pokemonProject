@@ -5,25 +5,26 @@ import bgImage1 from '/src/assets/background-darkbg.png';
 
 
 const typeColors = {
-  fire: ['#F08030', '#F5AC78'],
-  water: ['#6890F0', '#9DB7F5'],
-  grass: ['#78C850', '#A7DB8D'],
-  electric: ['#F8D030', '#FAE078'],
-  ice: ['#98D8D8', '#BCE6E6'],
-  fighting: ['#C03028', '#D67873'],
-  poison: ['#A040A0', '#C183C1'],
-  ground: ['#E0C068', '#EBD69D'],
-  flying: ['#A890F0', '#C6B7F5'],
-  psychic: ['#F85888', '#FA92B2'],
-  bug: ['#A8B820', '#C6D16E'],
-  rock: ['#B8A038', '#D1C17D'],
-  ghost: ['#705898', '#A292BC'],
-  dragon: ['#7038F8', '#A27DFA'],
-  dark: ['#705848', '#A29288'],
-  steel: ['#B8B8D0', '#D1D1E0'],
-  fairy: ['#EE99AC', '#F4BDC9'],
-  normal: ['#A8A878', '#C6C6A7']
+  fire: ['#E65100', '#BF360C'],          // deep orange
+  water: ['#1565C0', '#0D47A1'],         // deep blue
+  grass: ['#2E7D32', '#1B5E20'],         // forest green
+  electric: ['#F9A825', '#F57F17'],      // strong yellow-orange
+  ice: ['#00ACC1', '#00838F'],           // teal blue
+  fighting: ['#C62828', '#B71C1C'],      // crimson red
+  poison: ['#8E24AA', '#6A1B9A'],        // rich purple
+  ground: ['#8D6E63', '#5D4037'],        // brown/tan
+  flying: ['#5C6BC0', '#3949AB'],        // periwinkle/violet-blue
+  psychic: ['#D81B60', '#AD1457'],       // hot pink/magenta
+  bug: ['#689F38', '#558B2F'],           // earthy green
+  rock: ['#795548', '#4E342E'],          // strong brown
+  ghost: ['#4527A0', '#311B92'],         // deep violet
+  dragon: ['#512DA8', '#311B92'],        // rich indigo
+  dark: ['#3E2723', '#212121'],          // black/brown
+  steel: ['#607D8B', '#455A64'],         // slate gray
+  fairy: ['#C2185B', '#880E4F'],         // strong rose
+  normal: ['#757575', '#424242']         // gray scale
 };
+
 
 function Typecard({ typeName, image, onClick }) {
   const gradient = typeColors[typeName] || ['#E0E0E0', '#BDBDBD'];

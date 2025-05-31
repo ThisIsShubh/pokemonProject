@@ -5,16 +5,17 @@ import bgImage1 from '/src/assets/background-darkbg.png';
 import { Link } from 'react-router-dom';
 
 const regionColors = {
-  kanto: ['#FFCDD2', '#ff808c'],
-  johto: ['#FFF9C4', '#FFE082'],
-  hoenn: ['#B2DFDB', '#80CBC4'],
-  sinnoh: ['#E1BEE7', '#CE93D8'],
-  unova: ['#ECEFF1', '#CFD8DC'],
-  kalos: ['#C5CAE9', '#9FA8DA'],
-  alola: ['#FFE0B2', '#FFCC80'],
-  galar: ['#F0F4C3', '#DCE775'],
-  paldea: ['#F8BBD0', '#E1BEE7']
+  kanto: ['#D32F2F', '#B71C1C'],        // deeper red
+  johto: ['#FBC02D', '#F57F17'],        // bold yellow/orange
+  hoenn: ['#00796B', '#004D40'],        // strong teal
+  sinnoh: ['#8E24AA', '#6A1B9A'],       // rich purple
+  unova: ['#607D8B', '#455A64'],        // slate gray
+  kalos: ['#3F51B5', '#303F9F'],        // indigo blue
+  alola: ['#FB8C00', '#EF6C00'],        // orange
+  galar: ['#9E9D24', '#827717'],        // olive green
+  paldea: ['#AD1457', '#880E4F']        // dark pink/magenta
 };
+
 
 function Regioncard({ regionKey, professorName, professorImage, onClick }) {
   const gradient = regionColors[regionKey] || ['#E0E0E0', '#BDBDBD'];

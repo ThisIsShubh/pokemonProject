@@ -81,7 +81,7 @@ function All() {
         const formatted = data.map(pokemon => ({
           id: pokemon.id,
           name: pokemon.name,
-          sprite: pokemon.sprites.front_default,
+          sprite: pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default,
           types: pokemon.types.map(t => t.type.name),
         }));
 
@@ -112,7 +112,7 @@ function All() {
           return (matchType && matchGen && matchLegend && matchMyth) ? {
             id: pokemon.id,
             name: pokemon.name,
-            sprite: pokemon.sprites.front_default,
+            sprite: pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default,
             types: pokemon.types.map(t => t.type.name),
           } : null;
         }));

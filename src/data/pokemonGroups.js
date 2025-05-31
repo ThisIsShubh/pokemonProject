@@ -11,36 +11,37 @@ export const pokemonGroups = [
     key: 'starters',
     label: 'Starters',
     image: startersImg,
-    gradient: ['#DCE775', '#AED581']
+    gradient: ['#9E9D24', '#827717'] // deep olive green
   },
   {
     key: 'legendaries',
     label: 'Legendary Pokémon',
     image: legendsImg,
-    gradient: ['#B39DDB', '#9575CD']
+    gradient: ['#512DA8', '#311B92'] // rich indigo
   },
   {
     key: 'mythicals',
     label: 'Mythical Pokémon',
     image: mythicalsImg,
-    gradient: ['#F8BBD0', '#F48FB1']
+    gradient: ['#C2185B', '#880E4F'] // vibrant rose
   },
   {
     key: 'mega',
     label: 'Mega Evolutions',
     image: megaImg,
-    gradient: ['#CE93D8', '#AB47BC']
+    gradient: ['#7B1FA2', '#4A148C'] // dark violet
   },
-    {
+  {
     key: 'ultrabeasts',
     label: 'Ultra Beasts',
     image: ultraImg,
-    gradient: ['#F18C3B', '#E83F42']
+    gradient: ['#BF360C', '#DD2C00'] // intense orange-red
   },
   {
     key: 'baby',
     label: 'Baby Pokémon',
     image: babyImg,
-    gradient: ['#FFF59D', '#FFEB3B']
+    gradient: ['#FBC02D', '#F57F17'] // strong gold-yellow
   }
 ];
+
