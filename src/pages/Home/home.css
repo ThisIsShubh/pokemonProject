@@ -12,6 +12,7 @@
   align-items: flex-start;
   gap: 2rem;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .circle{
