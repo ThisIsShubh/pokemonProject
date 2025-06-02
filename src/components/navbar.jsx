@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import './navbar.css'
 import { FilterContext } from '../Context/FilterContext';
+import logo from '/src/assets/International_Pokémon_logo.png'; // Adjust the path as needed
+import React from 'react';
 
 const Navbar = ({ onSearch }) => {  const {
     searchTerm,
@@ -16,7 +18,7 @@ const Navbar = ({ onSearch }) => {  const {
   return (
     <nav className="navbar">
       <img
-        src="/src/assets/International_Pokémon_logo.png"
+        src={logo}
         alt="Logo"
         className="logoimg"
       />

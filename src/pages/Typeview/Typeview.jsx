@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import Card from '../../components/Card';
 import './type.css';
+import { FilterContext } from '/src/Context/FilterContext.jsx';
 
 const limit = 30;
 
@@ -12,6 +13,7 @@ function Typeview() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
+    const { searchTerm } = useContext(FilterContext);
 
  
   useEffect(() => {
@@ -61,6 +63,27 @@ function Typeview() {
 
     fetchTypePokemon();
   }, [typeName]);
+
+  useEffect(() => {
+  const filtered = allPokemonList.filter(p =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  const sliced = filtered.slice(start, end);
+
+  setVisiblePokemon(sliced);
+  setTotalPages(Math.ceil(filtered.length / limit));
+}, [searchTerm, allPokemonList, page]);
+
+
+  useEffect(() => {
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    setVisiblePokemon(allPokemonList.slice(start, end));
+  }, [page, allPokemonList]);
 
   const renderPagination = () => {
     if (totalPages <= 1) return null;

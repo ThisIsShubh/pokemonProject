@@ -11,28 +11,46 @@ import Button from '../../components/Button.jsx';
 import { pokemonGroups } from '../../data/pokemonGroups.js';
 import GroupCard from '../../components/Groupcard.jsx';
 import Typecard from '../../components/Typecard.jsx';
+import fire from '../../assets/types/fire.png';
+import water from '../../assets/types/water.png';
+import grass from '../../assets/types/grass.png';
+import electric from '../../assets/types/electric.png';
+import ice from '../../assets/types/ice.png';
+import fighting from '../../assets/types/fighting.png';
+import poison from '../../assets/types/poison.png';
+import ground from '../../assets/types/ground.png';
+import flying from '../../assets/types/flying.png';
+import psychic from '../../assets/types/psychic.png';
+import bug from '../../assets/types/bug.png';
+import rock from '../../assets/types/rock.png';
+import ghost from '../../assets/types/ghost.png';
+import dragon from '../../assets/types/dragon.png';
+import dark from '../../assets/types/dark.png';
+import steel from '../../assets/types/steel.png';
+import fairy from '../../assets/types/fairy.png';
+import normal from '../../assets/types/normal.png';
 
 
 function Home() {
     const pokemonTypes = [
-        { name: 'fire', image: '/src/assets/types/fire.png' },
-        { name: 'water', image: '/src/assets/types/water.png' },
-        { name: 'grass', image: '/src/assets/types/grass.png' },
-        { name: 'electric', image: '/src/assets/types/electric.png' },
-        { name: 'ice', image: '/src/assets/types/ice.png' },
-        { name: 'fighting', image: '/src/assets/types/fighting.png' },
-        { name: 'poison', image: '/src/assets/types/poison.png' },
-        { name: 'ground', image: '/src/assets/types/ground.png' },
-        { name: 'flying', image: '/src/assets/types/flying.png' },
-        { name: 'psychic', image: '/src/assets/types/psychic.png' },
-        { name: 'bug', image: '/src/assets/types/bug.png' },
-        { name: 'rock', image: '/src/assets/types/rock.png' },
-        { name: 'ghost', image: '/src/assets/types/ghost.png' },
-        { name: 'dragon', image: '/src/assets/types/dragon.png' },
-        { name: 'dark', image: '/src/assets/types/dark.png' },
-        { name: 'steel', image: '/src/assets/types/steel.png' },
-        { name: 'fairy', image: '/src/assets/types/fairy.png' },
-        { name: 'normal', image: '/src/assets/types/normal.png' }
+        { name: 'fire', image: fire},
+        { name: 'water', image: water },
+        { name: 'grass', image: grass },
+        { name: 'electric', image: electric },
+        { name: 'ice', image: ice },
+        { name: 'fighting', image: fighting },
+        { name: 'poison', image: poison },
+        { name: 'ground', image: ground },
+        { name: 'flying', image: flying },
+        { name: 'psychic', image: psychic },
+        { name: 'bug', image: bug},
+        { name: 'rock', image: rock },
+        { name: 'ghost', image: ghost },
+        { name: 'dragon', image: dragon },
+        { name: 'dark', image: dark },
+        { name: 'steel', image: steel },
+        { name: 'fairy', image: fairy },
+        { name: 'normal', image: normal }
     ];
     const navigate = useNavigate();
 

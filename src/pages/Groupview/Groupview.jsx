@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from '../../components/Card.jsx';
 import { pokemonGroups } from '../../data/pokemonGroups.js';
+import { FilterContext } from '../../Context/FilterContext.jsx';
 import './groupview.css'
 
 const limit = 30;
@@ -13,6 +14,7 @@ function GroupView() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
+  const { searchTerm } = useContext(FilterContext);
 
   const group = pokemonGroups.find(group => group.key === groupName);
 
@@ -20,6 +22,27 @@ const name = group?.label ?? 'Unknown Group';
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    setVisiblePokemon(allPokemonList.slice(start, end));
+  }, [page, allPokemonList]);
+
+  useEffect(() => {
+  const filtered = allPokemonList.filter(p =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  const sliced = filtered.slice(start, end);
+
+  setVisiblePokemon(sliced);
+  setTotalPages(Math.ceil(filtered.length / limit));
+}, [searchTerm, allPokemonList, page]);
+
+
+  useEffect(() => {
     const start = (page - 1) * limit;
     const end = start + limit;
     setVisiblePokemon(allPokemonList.slice(start, end));
