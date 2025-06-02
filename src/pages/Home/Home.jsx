@@ -92,6 +92,7 @@ function Home() {
                 {regionProfessors.map(({ region, name, image }) => {
                     return (
                         <RegionalCard
+                        className='region-card'
                             key={region}
                             regionKey={region}
                             professorName={name}

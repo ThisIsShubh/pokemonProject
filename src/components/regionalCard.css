@@ -84,6 +84,7 @@
 
 @media (max-width: 768px) {
     .rcard {
+        width: 100%;
         min-height: 180px;
         padding: 1rem;
     }
@@ -105,13 +106,21 @@
 }
 
 @media (max-width: 480px) {
-    .rcard {
-        align-items: center;
-        width: 38%;
-    }
+  .rcard {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    width: 90%;
+  }
 
-    .rcard-img-container {
-        height: 150px;
-        width: 150px;
-    }
+  .rcard-img-container {
+    height: 140px;
+    width: 140px;
+    margin-top: 0.5rem;
+  }
+
+  .rinfo{
+    align-items: center;
+    text-align: center;
+  }
 }

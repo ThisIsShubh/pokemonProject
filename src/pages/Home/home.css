@@ -115,10 +115,10 @@ padding: 1rem;
   gap: 2.5rem;
   justify-content: space-between;
   padding-bottom: 4rem;
+  background-color: aqua;
 }
 
+
 @media (max-width: 480px) {
-.regional-cards-container{
-  gap:1rem;
-}
+
 }
