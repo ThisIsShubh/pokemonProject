@@ -1,5 +1,5 @@
 .region-page{
-  padding: 2rem;
+  padding-top: 2rem;
   min-height: 100vh;
 }
 
@@ -91,4 +91,10 @@
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+ body .region-page {
+    padding-top: 10vh;
+  }
 }

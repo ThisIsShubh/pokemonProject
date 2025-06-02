@@ -38,3 +38,104 @@
     
     
 }
+
+.region-page{
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.tit-region{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+
+.dabba{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.line{
+  flex-grow: 1;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(171, 0, 0, 0.7), rgba(171, 0, 0, 0.4), rgb(171,0,0,0));
+}
+
+.line2{
+  height: 1px;
+  list-style: none;
+  width: 60%;
+  background: linear-gradient(90deg, rgb(0,0,0,0.3), rgb(0,0,0,0));
+}
+
+.region-title{
+  color: brown;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.region-page .card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.descr{
+  padding-bottom: 2rem;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 36px 0px;
+  gap: 8px;
+}
+
+
+.pagination button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+
+.pagination button:hover:not(:disabled) {
+  background-color: #eee;
+}
+
+
+.pagination button.active {
+  background-color: #282FE6;
+  color: white;
+}
+
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .group-page {
+    padding-top: 10vh;
+  }
+}
