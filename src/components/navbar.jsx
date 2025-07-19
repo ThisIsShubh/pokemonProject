@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.css'
 import { FilterContext } from '../Context/FilterContext';
 import logo from '/src/assets/International_Pokémon_logo.png'; // Adjust the path as needed
@@ -17,11 +18,14 @@ const Navbar = ({ onSearch }) => {  const {
 
   return (
     <nav className="navbar">
-      <img
-        src={logo}
-        alt="Logo"
-        className="logoimg"
-      />
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Logo"
+          className="logoimg"
+          style={{ cursor: 'pointer' }}
+        />
+      </Link>
       <div className='searchfilter'>
       <input
         type="text"

@@ -344,7 +344,6 @@ function PokeDetails() {
   };
 
 
-
   const getMegaEvolutions = () => {
     if (!species) return [];
     return species.varieties
