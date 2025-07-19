@@ -37,12 +37,36 @@ function PokeDetails() {
   const [typeData, setTypeData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cryAudio, setCryAudio] = useState(null);
+  const [showShiny, setShowShiny] = useState(false);
 
   const navigate = useNavigate();
 
   const handlePokemonClick = (name) => {
     navigate(`/pokemon/${name}`);
   };
+
+  // Play cry sound on image click
+  const playCry = () => {
+    if (cryAudio) {
+      cryAudio.currentTime = 0;
+      cryAudio.play();
+    }
+  };
+
+  // Prepare cry audio when pokemon changes
+  useEffect(() => {
+    if (pokemon && pokemon.id) {
+      // Clean up previous audio
+      if (cryAudio) {
+        cryAudio.pause();
+        setCryAudio(null);
+      }
+      const audio = new window.Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`);
+      setCryAudio(audio);
+    }
+    // eslint-disable-next-line
+  }, [pokemon]);
 
   const getBackground = () => {
     if (!pokemon || !pokemon.types) return {};
@@ -363,7 +387,19 @@ function PokeDetails() {
     return multipliers;
   };
 
-  if (loading) return <div className="loading-spinner"></div>;
+if (loading) {
+  return (
+    <div className="poke-loading-container">
+      <div className="pokeball-spinner">
+        <div className="pokeball-top"></div>
+        <div className="pokeball-bottom"></div>
+        <div className="pokeball-center"></div>
+        <div className="pokeball-button"></div>
+      </div>
+      <p className="loading-text">Loading Pokémon...</p>
+    </div>
+  );
+}
   if (error) return <div className="error-message">{error}</div>;
   if (!pokemon || !species) return null;
 
@@ -390,11 +426,52 @@ function PokeDetails() {
           <p className="pokemon-genus">{genusEntry?.genus}</p>
         </div>
 
-        <div className="image-section">
+        <div className="image-section" style={{ position: 'relative' }}>
+          <button
+            className="shiny-toggle-btn"
+            onClick={() => setShowShiny((prev) => !prev)}
+            style={{
+              position: 'absolute',
+              top: '1rem',
+              left: '12rem',
+              zIndex: 10,
+              background: showShiny ? '#ffe066' : '#e0e0e070',
+              border: 'none',
+              borderRadius: '50%',
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: showShiny ? '0 0 8px 2px #ffe066' : '0 1px 4px #bbb',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              outline: showShiny ? '2px solid #ffd700' : 'none',
+              padding: 0,
+            }}
+            title={showShiny ? 'Show normal form' : 'Show shiny form'}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon 
+    points="12 2 14 10 22 12 14 14 12 22 10 14 2 12 10 10" 
+    fill={showShiny ? '#ffd700' : 'none'} 
+    stroke={showShiny ? '#d4b400ff' : '#c3c3c3ff'} 
+    strokeWidth="1.5" 
+    strokeLinejoin="round" 
+  />
+</svg>
+
+          </button>
           <img
             className="main-artwork"
-            src={pokemon.sprites.other['official-artwork'].front_default}
-            alt={pokemon.name}
+            src={showShiny
+              ? (pokemon.sprites?.other?.['official-artwork']?.front_shiny || pokemon.sprites?.front_shiny)
+              : (pokemon.sprites?.other?.['official-artwork']?.front_default || pokemon.sprites?.front_default)
+            }
+            alt={pokemon.name + (showShiny ? ' shiny' : '')}
+            onClick={playCry}
+            style={{ cursor: 'pointer' }}
+            title="Click to play cry"
           />
           <div className="sprite-gallery">
             {/* Male/Default Sprites */}

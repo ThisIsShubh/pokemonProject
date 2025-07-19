@@ -193,7 +193,15 @@ function All() {
   return (
     <div className="home-container">
       {loading ? (
-        <p>Loading Pokémons...</p>
+        <div className="poke-loading-container">
+          <div className="pokeball-spinner">
+            <div className="pokeball-top"></div>
+            <div className="pokeball-bottom"></div>
+            <div className="pokeball-center"></div>
+            <div className="pokeball-button"></div>
+          </div>
+          <p className="loading-text">Loading Pokémon...</p>
+        </div>
       ) : (
         <div className="Cards">
           {pokemons.map(pokemon => (
